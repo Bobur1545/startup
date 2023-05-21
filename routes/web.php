@@ -27,9 +27,12 @@ Route::middleware('auth')->group(function () {
         return view('admin.index');
     });
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/users', [ProfileController::class, 'index'])->name('users_list.index');
+    Route::post('/store', [ProfileController::class, 'store'])->name('users_list.store');
+    Route::get('/users_update/{id}', [ProfileController::class, 'edit'])->name('users_update');
+    Route::put('/update/{user}', [ProfileController::class, 'update'])->name('users_list.update');
+    Route::get('/destroy/{id}', [ProfileController::class, 'destroy'])->name('users_destroy');
+
 });
 
 require __DIR__.'/auth.php';
