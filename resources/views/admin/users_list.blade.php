@@ -92,11 +92,10 @@
                             <input type="text" class="form-control" name="group" placeholder="Enter group" required>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="col-md-12" style="display: none">
                             <label class="form-label">Role</label>
                             <select class="custom-select" style="" id="selectBox" required name="role">
-                                <option value="1">User</option>
-                                <option value="2">Referee</option>
+                                <option value="1" selected >User</option>
                             </select>
                         </div>
 

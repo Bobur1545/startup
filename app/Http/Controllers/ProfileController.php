@@ -16,8 +16,14 @@ class ProfileController extends Controller
 
     public function index(): View
     {
-        $users = User::all();
+        $users = User::where('role', 1)->get();
         return view('admin.users_list', ['users' => $users]);
+    }
+
+    public function index_referees(): View
+    {
+        $referees = User::where('role', 2)->get();
+        return view('admin.referees', ['referees' => $referees]);
     }
 
     public function store(Request $request):RedirectResponse
@@ -39,7 +45,7 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('users_list.index')->with('success', 'Successfully added');
+        return redirect()->back()->with('success', 'Successfully added');
     }
 
 
@@ -53,25 +59,26 @@ class ProfileController extends Controller
      */
     public function update(Request $request, User $user): RedirectResponse
     {
-//        dd($request->all());
             $request->validate([
                 'id' => 'required',
                 'name' => 'required',
                 'email' => 'required',
                 'password' => 'required|confirmed',
                 'group' => 'required',
-                'role' => 'required',
             ]);
 
         $user['password'] = bcrypt($request->password);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->group = $request->group;
-        $user->role = $request->role;
-
         $user->save();
 
-        return redirect()->route('users_list.index')->with('success', 'Successful updated');
+        if($user->role == 1){
+            return redirect()->route('users_list.index')->with('success', 'Successful updated');
+        }else{
+            return redirect()->route('referees.index_referees')->with('success', 'Successful updated');
+        }
+
     }
 
     /**

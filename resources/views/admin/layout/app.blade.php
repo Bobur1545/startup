@@ -74,12 +74,12 @@
                                 <a href="{{route('users_list.index')}}">> <span>Users</span></a>
                             </li>
                             <li>
-                                <a href="#">> <span>Referees</span></a>
+                                <a href="{{route('referees.index_referees')}}">> <span>Referees</span></a>
                             </li>
                         </ul>
                     </li>
 
-                    <li><a href="#"><i class="fa fa-clock-o orange_color"></i> <span>Add competiotions</span></a></li>
+                    <li><a href="{{route('add_competition.index')}}"><i class="fa fa-clock-o orange_color"></i> <span>Add competiotions</span></a></li>
 
                     <li>
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cog yellow_color"></i> <span>Control</span></a>
@@ -88,7 +88,7 @@
                             <li><a href="#">> <span>Control grades</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="#"> <i class="fa fa-diamond purple_color"></i>  <span>Add news</span></a></li>
+                    <li><a href="{{route('add_news.index')}}"> <i class="fa fa-diamond purple_color"></i>  <span>Add news</span></a></li>
 
                     <li><a href="#"><i class="fa fa-briefcase blue1_color"></i> <span>My documents</span></a></li>
 
@@ -96,7 +96,7 @@
 
                     <li><a href="#"><i class="fa fa-table purple_color2"></i> <span>Evaluation</span></a></li>
 
-                    <li><a href="#"><i class="fa fa-bar-chart-o green_color"></i> <span>Charts</span></a></li>
+                    <li><a href="{{route('admin.index')}}"><i class="fa fa-bar-chart-o green_color"></i> <span>News</span></a></li>
 
 
                 </ul>

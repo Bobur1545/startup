@@ -31,14 +31,6 @@
                 <input type="text"  value="{{$user->group}}" class="form-control" name="group" placeholder="Update group" required>
             </div>
 
-            <div class="col-md-12">
-                <label class="form-label">Role</label>
-                <select class="custom-select" style="" id="selectBox" required name="role">
-                    <option value="1"> User</option>
-                    <option value="2"> Referee</option>
-                </select>
-            </div>
-
         </div>
 
             <a href="{{route('users_list.index')}}" class="btn btn-secondary">Back</a>
