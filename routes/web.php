@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddCompetitionController;
 use App\Http\Controllers\AddNewsController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\MyDocumentsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,10 +35,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/destroy/{id}', [ProfileController::class, 'destroy'])->name('users_destroy');
 
     Route::resource('/add_competition', AddCompetitionController::class);
-
     Route::resource('/add_news', AddNewsController::class);
     Route::get('/main', [AddNewsController::class, 'index_news'])->name('admin.index');
     Route::get('show_news/{id}', [AddNewsController::class, 'show_news'])->name('admin.show_news');
+    Route::resource('/mydocuments', MyDocumentsController::class);
+
+
 
 
 });

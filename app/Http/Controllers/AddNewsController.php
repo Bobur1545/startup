@@ -18,7 +18,7 @@ class AddNewsController extends Controller
 
     public function index_news()
     {
-        $add_news = AddNews::all();
+        $add_news = AddNews::all()->sortByDesc('id');
         foreach ($add_news as $news) {
             $limitedText = implode(' ', array_slice(str_word_count($news->text, 1), 0, 30));
             $news->limitedText = $limitedText;
