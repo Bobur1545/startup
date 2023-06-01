@@ -7,6 +7,7 @@ use App\Http\Controllers\AddNewsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\MyDocumentsController;
 use App\Http\Controllers\ShareDocumentsController;
+use App\Http\Controllers\ControlDocumentsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/mydocument_control/{id}', [MyDocumentsController::class, 'user_index'])->name('admin.mydocument_control');
     Route::get('/download/{id}', [MyDocumentsController::class, 'download'])->name('user_download.file');
     Route::resource('/share_documents', ShareDocumentsController::class);
-
+    Route::get('/control_documents', [ControlDocumentsController::class, 'index'])->name('control_documents.index');
 
 });
 
