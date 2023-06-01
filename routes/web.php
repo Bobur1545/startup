@@ -39,7 +39,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/main', [AddNewsController::class, 'index_news'])->name('admin.index');
     Route::get('show_news/{id}', [AddNewsController::class, 'show_news'])->name('admin.show_news');
     Route::resource('/mydocuments', MyDocumentsController::class);
-
+    Route::get('/mydocument_control/{id}', [MyDocumentsController::class, 'user_index'])->name('admin.mydocument_control');
+    Route::get('/download/{id}', [MyDocumentsController::class, 'download'])->name('user_download.file');
 
 
 

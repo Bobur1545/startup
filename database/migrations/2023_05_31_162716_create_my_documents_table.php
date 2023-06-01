@@ -16,10 +16,9 @@ return new class extends Migration
             $table->string('project_name');
             $table->string('project_type');
             $table->string('project_field');
+            $table->string('project_github')->nullable();
             $table->string('project_ppt');
-            $table->string('project_github');
-            $table->string('project_video');
-            $table->string('project_images');
+            $table->string('project_images')->nullable();
 
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

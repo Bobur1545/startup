@@ -9,7 +9,7 @@ class MyDocuments extends Model
 {
     use HasFactory;
     protected $fillable = [
-      'project_name', 'project_type', 'project_field', 'project_ppt', 'project_github', 'project_video',
+      'project_name', 'project_type', 'project_field', 'project_ppt', 'project_github',
         'project_images', 'user_id'
     ];
 

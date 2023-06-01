@@ -39,14 +39,53 @@
                                                     id="showModal" class="btn btn-warning" style="margin-right: 5px;" data-toggle="modal" data-target="#exampleModal2"><i class="fa fa-pencil"></i></button>
 
                                             <form action="{{route('add_news.destroy', $news->id)}}" method="post">
-                                            @csrf
+                                                @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </div>
                                     </td>
-
                                 </tr>
+
+
+                                {{--    modal for update--}}
+                                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+
+                                            <form  action="{{route('add_news.update', $news->id)}}" enctype="multipart/form-data" id="update_form" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="modal-body">
+                                                    <input id="fid" type="hidden" name="id" required>
+
+                                                    <label for="name">Title of news</label>
+                                                    <input type="text" id="ftitle" name="title" value="" class="form-control" required>
+
+                                                    <label for="phone">Text of news</label>
+                                                    <textarea id="ftext" class="form-control" name="text" style="height: 300px" required></textarea>
+
+                                                    <label for="address">Competition day</label>
+                                                    <input id="fimage" type="file" class="form-control" name="image">
+
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Update</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                {{--                                modal update end--}}
+
                             @endforeach
                             </tbody>
                         </table>
@@ -55,8 +94,6 @@
             </div>
         </div>
     </div>
-
-
 
 
     <!-- Modal for store-->
@@ -96,42 +133,6 @@
         </div>
     </div>
 
-{{--    modal for update--}}
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Update</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <form  action="{{route('add_news.update', $news->id)}}" enctype="multipart/form-data" id="update_form" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="modal-body">
-                        <input id="fid" type="hidden" name="id" required>
-
-                        <label for="name">Title of news</label>
-                        <input type="text" id="ftitle" name="title" value="" class="form-control" required>
-
-                        <label for="phone">Text of news</label>
-                        <textarea id="ftext" class="form-control" name="text" style="height: 300px" required></textarea>
-
-                        <label for="address">Competition day</label>
-                        <input id="fimage" type="file" class="form-control" name="image">
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </div>
 
 
 

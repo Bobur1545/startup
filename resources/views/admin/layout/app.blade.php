@@ -90,7 +90,7 @@
                     </li>
                     <li><a href="{{route('add_news.index')}}"> <i class="fa fa-diamond purple_color"></i>  <span>Add news</span></a></li>
 
-                    <li><a href="#"><i class="fa fa-briefcase blue1_color"></i> <span>My documents</span></a></li>
+                    <li><a href="{{route('mydocuments.index')}}"><i class="fa fa-briefcase blue1_color"></i> <span>My documents</span></a></li>
 
                     <li><a href="#"><i class="fa fa-object-group blue2_color"></i> <span>Share documents</span></a></li>
 

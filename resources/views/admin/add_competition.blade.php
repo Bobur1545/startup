@@ -44,6 +44,46 @@
                                         </td>
 
                                     </tr>
+
+{{--                                    update data--}}
+                                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Ma'lumotlarni yangilash</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                <form  action="{{route('add_competition.update', $add_competition->id)}}"  id="update_form" method="POST">
+                                                    @csrf
+                                                    @method('PUT')
+                                                    <div class="modal-body">
+                                                        <input id="fid" type="hidden" name="id" required>
+
+                                                        <label for="name">Name of competition</label>
+                                                        <input type="text" id="fname" name="name" value="" class="form-control" required>
+
+                                                        <label for="phone">Last day of application</label>
+                                                        <input type="text" id="flast_document_day" name="last_document_day" value="" class="form-control" required>
+
+                                                        <label for="address">Competition day</label>
+                                                        <input type="text" id="fcompetition_day" name="competition_day" class="form-control" value=""  required>
+
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Update</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+{{--                                    update data end--}}
+
                                 @endforeach
                                 </tbody>
                             </table>
@@ -52,9 +92,6 @@
                 </div>
             </div>
         </div>
-
-
-
 
         <!-- Modal for store-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -93,42 +130,6 @@
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ma'lumotlarni yangilash</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-
-                    <form  action="{{route('add_competition.update', $add_competition->id)}}"  id="update_form" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="modal-body">
-                            <input id="fid" type="hidden" name="id" required>
-
-                            <label for="name">Name of competition</label>
-                            <input type="text" id="fname" name="name" value="" class="form-control" required>
-
-                            <label for="phone">Last day of application</label>
-                            <input type="text" id="flast_document_day" name="last_document_day" value="" class="form-control" required>
-
-                            <label for="address">Competition day</label>
-                            <input type="text" id="fcompetition_day" name="competition_day" class="form-control" value=""  required>
-
-
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Update</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
 
 
 
