@@ -9,7 +9,7 @@
 
                         <!-- Button trigger modal -->
                         <button type="button" style="margin: 30px;" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Add user
+                            Add referee
                         </button>
 
                         <table class="table">
@@ -18,7 +18,7 @@
                                 <th scope="col">No</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Group</th>
+                                <th scope="col">Department</th>
                                 <th scope="col">Operation</th>
                             </tr>
                             </thead>
@@ -61,7 +61,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">User save</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Referee save</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form method="post" action="{{route('users_list.store')}}">

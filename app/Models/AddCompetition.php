@@ -13,4 +13,8 @@ class AddCompetition extends Model
         'last_document_day',
         'competition_day',
     ];
+
+    public function sharedocuments(){
+        return $this->hasMany(ShareDocuments::class, 'competition_id', 'id');
+    }
 }

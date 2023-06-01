@@ -10,7 +10,7 @@
 
                         <!-- Button trigger modal -->
                         <button type="button" style="margin: 30px;" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Add competition
+                            Add documents
                         </button>
 
                         <table class="table">

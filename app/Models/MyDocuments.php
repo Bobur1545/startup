@@ -17,4 +17,8 @@ class MyDocuments extends Model
     {
         return $this->belongsTo(User::class,'user_id','id');
     }
+
+    public function sharedocuments(){
+        return $this->hasMany(ShareDocuments::class, 'mydocuments_id', 'id');
+    }
 }

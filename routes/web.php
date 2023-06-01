@@ -6,6 +6,7 @@ use App\Http\Controllers\AddCompetitionController;
 use App\Http\Controllers\AddNewsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\MyDocumentsController;
+use App\Http\Controllers\ShareDocumentsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,9 +22,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-//Route::get('/dashboard', function () {
-//    return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
@@ -41,7 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/mydocuments', MyDocumentsController::class);
     Route::get('/mydocument_control/{id}', [MyDocumentsController::class, 'user_index'])->name('admin.mydocument_control');
     Route::get('/download/{id}', [MyDocumentsController::class, 'download'])->name('user_download.file');
-
+    Route::resource('/share_documents', ShareDocumentsController::class);
 
 
 });
