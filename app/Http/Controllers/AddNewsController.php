@@ -12,7 +12,7 @@ class AddNewsController extends Controller
      */
     public function index()
     {
-        $add_news = AddNews::paginate(20);
+        $add_news = AddNews::orderByDesc('id')->paginate(20);
         return view('admin.add_news', ['add_news' => $add_news]);
     }
 

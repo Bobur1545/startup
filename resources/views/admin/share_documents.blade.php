@@ -88,20 +88,5 @@
             </div>
         </div>
     </div>
-
-
-
-
 @endsection
-{{--<script>--}}
-{{--    function func(news, route){--}}
-{{--        console.log(news.title);--}}
-{{--        document.getElementById('fid').value = news.id;--}}
-{{--        document.getElementById('ftitle').value = news.title;--}}
-{{--        console.log(news.text);--}}
-{{--        document.getElementById('ftext').value = news.text;--}}
-{{--        document.getElementById('fimage').value = news.image;--}}
-{{--        var form = document.getElementById('update_form');--}}
-{{--        form.setAttribute('action', route);--}}
-{{--    }--}}
-{{--</script>--}}
+
