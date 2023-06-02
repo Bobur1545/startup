@@ -23,9 +23,12 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                             @foreach($referees as $referee)
                                 <tr>
-                                    <th scope="row">{{$referee->id}}</th>
+                                    <th scope="row">{{$i++}}</th>
                                     <td>{{$referee->name}}</td>
                                     <td>{{$referee->email}}</td>
                                     <td>{{$referee->group}}</td>
@@ -48,6 +51,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $referees->links() }}
                 </div>
             </div>
         </div>

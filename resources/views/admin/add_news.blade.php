@@ -24,9 +24,12 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                             @foreach($add_news as $news)
                                 <tr>
-                                    <th scope="row">{{$news->id}}</th>
+                                    <th scope="row">{{$i++ }}</th>
                                     <td>{{$news->title}}</td>
                                     <td>{{$news->text}}</td>
                                     <td>
@@ -90,6 +93,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $add_news->links() }}
                 </div>
             </div>
         </div>

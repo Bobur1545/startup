@@ -9,7 +9,7 @@
 
                         <!-- Button trigger modal -->
                         <button type="button" style="margin: 30px;" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                           Add user
+                           Add participants
                         </button>
 
                         <table class="table">
@@ -23,9 +23,12 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                             @foreach($users as $user)
                                 <tr>
-                                    <th scope="row">{{$user->id}}</th>
+                                    <th scope="row">{{$i ++}}</th>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->group}}</td>
@@ -48,6 +51,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $users->links() }}
                 </div>
             </div>
         </div>

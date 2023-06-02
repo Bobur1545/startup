@@ -23,9 +23,12 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                             @foreach($mydocuments as $mydocument)
                                 <tr>
-                                    <th scope="row">{{$mydocument->id}}</th>
+                                    <th scope="row">{{$i++}}</th>
                                     <td>{{$mydocument->project_name}}</td>
                                     <td>{{$mydocument->project_type}}</td>
                                     <td>
@@ -48,6 +51,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $mydocuments->links() }}
                 </div>
             </div>
         </div>

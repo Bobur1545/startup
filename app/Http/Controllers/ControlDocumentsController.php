@@ -16,13 +16,19 @@ class ControlDocumentsController extends Controller
 
         // Tanlangan tanlov bilan bog'liq hujjatlarni olish
         $sharedocuments = ShareDocuments::where('competition_id', $selectedCompetitionId)->get();
-        $mydocuments = MyDocuments::all();
 
         return view('admin.controldocuments', [
             'competitions' => $competitions,
             'sharedocuments' => $sharedocuments,
-            'mydocuments' => $mydocuments,
             'selectedCompetitionId' => $selectedCompetitionId
         ]);
     }
+
+    public function show_user_documents(Request $request)
+    {
+        $mydocuments = MyDocuments::find($request->id);
+        return view('admin.show_user_documents', [
+            'mydocuments' => $mydocuments] );
+    }
+
 }

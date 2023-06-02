@@ -12,13 +12,13 @@ class AddNewsController extends Controller
      */
     public function index()
     {
-        $add_news = AddNews::all();
+        $add_news = AddNews::paginate(20);
         return view('admin.add_news', ['add_news' => $add_news]);
     }
 
     public function index_news()
     {
-        $add_news = AddNews::all()->sortByDesc('id');
+        $add_news = AddNews::orderBy('id', 'desc')->paginate(30);
         foreach ($add_news as $news) {
             $limitedText = implode(' ', array_slice(str_word_count($news->text, 1), 0, 30));
             $news->limitedText = $limitedText;

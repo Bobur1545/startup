@@ -14,7 +14,7 @@ class ShareDocumentsController extends Controller
      */
     public function index()
     {
-        $sharedocuments = ShareDocuments::where('user_id', auth()->user()->id)->get();
+        $sharedocuments = ShareDocuments::where('user_id', auth()->user()->id)->paginate(20);
         $mydocuments = MyDocuments::where('user_id', auth()->user()->id)->get();
         $competitions = AddCompetition::all();
         return view('admin.share_documents',

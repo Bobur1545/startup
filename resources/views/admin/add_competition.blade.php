@@ -24,9 +24,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @php
+                                    $i=1;
+                                @endphp
                                 @foreach($add_competitions as $add_competition)
                                     <tr>
-                                        <th scope="row">{{$add_competition->id}}</th>
+                                        <th scope="row">{{$i++}}</th>
                                         <td>{{$add_competition->name}}</td>
                                         <td>{{$add_competition->last_document_day}}</td>
                                         <td>{{$add_competition->competition_day}}</td>
@@ -88,6 +91,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        {{ $add_competitions->links() }}
                     </div>
                 </div>
             </div>

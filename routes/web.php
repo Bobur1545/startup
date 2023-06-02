@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/download/{id}', [MyDocumentsController::class, 'download'])->name('user_download.file');
     Route::resource('/share_documents', ShareDocumentsController::class);
     Route::get('/control_documents', [ControlDocumentsController::class, 'index'])->name('control_documents.index');
-
+    Route::get('show_user_documents/{id}', [ControlDocumentsController::class, 'show_user_documents'])->name('control_documents.show_user_documents');
 });
 
 require __DIR__.'/auth.php';

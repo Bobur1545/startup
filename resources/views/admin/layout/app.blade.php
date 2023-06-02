@@ -68,10 +68,10 @@
                 <h4>General</h4>
                 <ul class="list-unstyled components">
                     <li class="active">
-                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-user-plus orange_color"></i> <span>Users</span></a>
                         <ul class="collapse list-unstyled" id="dashboard">
                             <li>
-                                <a href="{{route('users_list.index')}}">> <span>Users</span></a>
+                                <a href="{{route('users_list.index')}}">> <span>Participants</span></a>
                             </li>
                             <li>
                                 <a href="{{route('referees.index_referees')}}">> <span>Referees</span></a>
@@ -79,24 +79,24 @@
                         </ul>
                     </li>
 
-                    <li><a href="{{route('add_competition.index')}}"><i class="fa fa-clock-o orange_color"></i> <span>Add competiotions</span></a></li>
+                    <li><a href="{{route('add_competition.index')}}"><i class="fa fa-folder-open-o orange_color"></i> <span>Add competiotions</span></a></li>
 
                     <li>
-                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cog yellow_color"></i> <span>Control</span></a>
+                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-balance-scale orange_color"></i> <span>Control</span></a>
                         <ul class="collapse list-unstyled" id="element">
                             <li><a href="{{route('control_documents.index')}}">> <span>Control documents</span></a></li>
                             <li><a href="#">> <span>Control grades</span></a></li>
                         </ul>
                     </li>
-                    <li><a href="{{route('add_news.index')}}"> <i class="fa fa-diamond purple_color"></i>  <span>Add news</span></a></li>
+                    <li><a href="{{route('add_news.index')}}"> <i class="fa fa-sticky-note orange_color"></i>  <span>Add news</span></a></li>
 
                     <li><a href="{{route('mydocuments.index')}}"><i class="fa fa-briefcase blue1_color"></i> <span>My documents</span></a></li>
 
-                    <li><a href="{{route('share_documents.index')}}"><i class="fa fa-object-group blue2_color"></i> <span>Share documents</span></a></li>
+                    <li><a href="{{route('share_documents.index')}}"><i class="fa fa-share-square-o blue1_color"></i> <span>Share documents</span></a></li>
 
-                    <li><a href="#"><i class="fa fa-table purple_color2"></i> <span>Evaluation</span></a></li>
+                    <li><a href="#"><i class="fa fa-hourglass-half green_color"></i> <span>Evaluation</span></a></li>
 
-                    <li><a href="{{route('admin.index')}}"><i class="fa fa-bar-chart-o green_color"></i> <span>News</span></a></li>
+                    <li><a href="{{route('admin.index')}}"><i class="fa fa-newspaper-o yellow_color"></i> <span>News</span></a></li>
 
 
                 </ul>

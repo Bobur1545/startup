@@ -12,7 +12,7 @@ class MyDocumentsController extends Controller
      */
     public function index(Request $request)
     {
-        $mydocuments = MyDocuments::where('user_id', auth()->user()->id)->get();
+        $mydocuments = MyDocuments::where('user_id', auth()->user()->id)->paginate(20);
         return view('admin.mydocuments', ['mydocuments' => $mydocuments]);
     }
 

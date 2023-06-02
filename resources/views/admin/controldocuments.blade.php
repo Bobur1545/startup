@@ -11,6 +11,7 @@
                         <div class="col-md-6" style="margin: 12px">
                             <form action="{{ route('control_documents.index') }}" method="get">
                                 <select class="custom-select" style="" id="selectBox" required name="competition_id" onchange="this.form.submit()">
+                                    <option value="" > Select one of competitions </option>
                                     @foreach($competitions as $competition)
                                         <option value="{{ $competition->id }}" {{ $selectedCompetitionId == $competition->id ? 'selected' : '' }}>
                                             {{ $competition->name }}
@@ -33,16 +34,19 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                             @foreach($sharedocuments as $sharedocument)
                                 <tr>
-                                    <th scope="row"> {{$sharedocument->id}} </th>
+                                    <th scope="row"> {{$i++}} </th>
                                     <td> {{$sharedocument->user->name}} </td>
                                     <td> {{$sharedocument->mydocuments->project_name}} </td>
                                     <td> {{$sharedocument->created_at}} </td>
                                     <td>
                                         <div style="display: flex; align-items: center;">
-                                            <form action="" method="post">
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-laptop"></i></button>
+                                            <form action="{{route('control_documents.show_user_documents', $sharedocument->mydocuments_id)}}" method="get">
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-file"></i></button>
                                             </form>
                                         </div>
                                     </td>
@@ -52,6 +56,7 @@
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </div>

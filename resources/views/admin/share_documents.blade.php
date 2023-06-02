@@ -23,9 +23,12 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                $i=1;
+                            @endphp
                             @foreach($sharedocuments as $sharedocument)
                                 <tr>
-                                    <th scope="row">{{$sharedocument->id}}</th>
+                                    <th scope="row">{{$i++}}</th>
                                     <td>{{$sharedocument->mydocuments->project_name}}</td>
                                     <td>{{$sharedocument->competition->name}}</td>
                                     <td>
@@ -42,6 +45,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $sharedocuments->links() }}
                 </div>
             </div>
         </div>
