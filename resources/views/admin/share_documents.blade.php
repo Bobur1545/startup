@@ -33,10 +33,12 @@
                                     <td>{{$sharedocument->competition->name}}</td>
                                     <td>
                                         <div style="display: flex; align-items: center;">
-                                            <form action="{{route('share_documents.destroy', $sharedocument->id)}}" method="post">
+                                            <form action="{{ route('share_documents.destroy', $sharedocument->id) }}" method="post" id="deleteForm">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-danger" onclick="confirmDelete(event)">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
                                             </form>
                                         </div>
                                     </td>
@@ -89,4 +91,25 @@
         </div>
     </div>
 @endsection
+<script>
+    function confirmDelete(event) {
+        event.preventDefault(); // Prevent the default form submission
 
+        // Show the Sweet Alert confirmation dialog
+        Swal.fire({
+            title: 'Confirmation',
+            text: 'Are you sure you want to delete this item?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // If the user confirms, submit the form
+                document.getElementById('deleteForm').submit();
+            }
+        });
+    }
+</script>

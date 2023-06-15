@@ -17,4 +17,7 @@ class AddCompetition extends Model
     public function sharedocuments(){
         return $this->hasMany(ShareDocuments::class, 'competition_id', 'id');
     }
+    public function evaluation(){
+        return $this->hasMany(Evaluation::class, 'competition_id', 'id');
+    }
 }

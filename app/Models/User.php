@@ -32,6 +32,10 @@ class User extends Authenticatable
     public function sharedocuments(){
         return $this->hasMany(ShareDocuments::class, 'user_id', 'id');
     }
+
+    public function evaluation(){
+        return $this->hasMany(Evaluation::class, 'user_id', 'id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

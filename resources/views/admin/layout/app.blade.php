@@ -94,7 +94,7 @@
 
                     <li><a href="{{route('share_documents.index')}}"><i class="fa fa-share-square-o blue1_color"></i> <span>Share documents</span></a></li>
 
-                    <li><a href="#"><i class="fa fa-hourglass-half green_color"></i> <span>Evaluation</span></a></li>
+                    <li><a href="{{route('evaluation.index')}}"><i class="fa fa-hourglass-half green_color"></i> <span>Evaluation</span></a></li>
 
                     <li><a href="{{route('admin.index')}}"><i class="fa fa-newspaper-o yellow_color"></i> <span>News</span></a></li>
 
@@ -191,5 +191,7 @@
 <!-- custom js -->
 <script src="{{asset('admin/asset/js/custom.js')}}"></script>
 <script src="{{asset('admin/asset/js/chart_custom_style1.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 </html>

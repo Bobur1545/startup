@@ -17,6 +17,9 @@ class ControlDocumentsController extends Controller
         // Tanlangan tanlov bilan bog'liq hujjatlarni olish
         $sharedocuments = ShareDocuments::where('competition_id', $selectedCompetitionId)->get();
 
+        // Tanlangan ID ni sessionga saqlash
+        session(['selectedCompetitionId' => $selectedCompetitionId]);
+
         return view('admin.controldocuments', [
             'competitions' => $competitions,
             'sharedocuments' => $sharedocuments,
