@@ -85,7 +85,7 @@
                         <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-balance-scale orange_color"></i> <span>Control</span></a>
                         <ul class="collapse list-unstyled" id="element">
                             <li><a href="{{route('control_documents.index')}}">> <span>Control documents</span></a></li>
-                            <li><a href="#">> <span>Control grades</span></a></li>
+                            <li><a href="{{route('control_documents.index_grades')}}">> <span>Control grades</span></a></li>
                         </ul>
                     </li>
                     <li><a href="{{route('add_news.index')}}"> <i class="fa fa-sticky-note orange_color"></i>  <span>Add news</span></a></li>

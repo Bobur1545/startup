@@ -69,15 +69,8 @@
                                             <form action="{{ route('evaluation.store') }}" id="save_form" method="POST">
                                                 @csrf
                                                 <div class="modal-body">
-                                                    <div class="col-md-12">
-                                                        <label class="form-label">User id</label>
-                                                        <input id="fuser_id" type="number" class="form-control" name="user_id" value="{{$sharedocument->user_id}}" required>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <label class="form-label">Competition_id</label>
-                                                        <input id="fcompetition_id" type="number" class="form-control" name="competition_id" value="{{$sharedocument->competition_id}}" required>
-                                                    </div>
-
+                                                    <input id="fuser_id" type="hidden" class="form-control" name="user_id" value="{{$sharedocument->user_id}}" required>
+                                                    <input id="fcompetition_id" type="hidden" class="form-control" name="competition_id" value="{{$sharedocument->competition_id}}" required>
                                                     <div class="col-md-12">
                                                         <label class="form-label">Scientific and innovative novelty of the project</label>
                                                         <input id="fcategory_1" type="number" class="form-control" name="category_1" placeholder="Put a score" required>
@@ -105,12 +98,10 @@
                                     </div>
                                 </div>
                                 {{--                                modal update end--}}
-
                             @endforeach
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>

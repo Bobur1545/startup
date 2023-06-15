@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/share_documents', ShareDocumentsController::class);
     Route::get('/control_documents', [ControlDocumentsController::class, 'index'])->name('control_documents.index');
     Route::get('show_user_documents/{id}', [ControlDocumentsController::class, 'show_user_documents'])->name('control_documents.show_user_documents');
+    Route::get('/control_grades', [ControlDocumentsController::class, 'index_grades'])->name('control_documents.index_grades');
     Route::resource('/evaluation', EvaluationController::class);
 
 });
